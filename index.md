@@ -3,6 +3,42 @@ A collection of tricks to help you code golfing with Python or to confuse your c
 
 I use these python tricks all the time when clashing in shortest mode on codingame or playing code golf. These are very useful. If you want to add another snippet, create a pull request. Also, it would be very nice to help sorting that unsorted stuff.
 
+Also, it's highly inspired by https://tinier.js.org/. I did not find any type of collection out there for python so I made one.
+
+## What is Python/Code Golfing
+
+## Why and when should minified code be used?
+
+> The purpose of code golfing is to test one’s abilities, during challenges. That said, you should not use techniques like this in your normal code, as it compromises readability. Ideally, you should only use these tricks during a challenge.  
+
+<i> ~ tinier.js.org </i>
+
+## Reading inputs
+
+Let's say for example you have three lines of the given input e.g.
+```mkd
+10
+20
+30
+```
+
+normally, you would write something like
+
+```py
+a=int(input())
+b=int(input())
+c=int(input())
+```
+
+in order to retrieve all three of these numbers.
+This can be minified by using ``open`` with the file descriptor ``0`` which stands for ``stdin``:
+
+```py
+a,b,c=map(int,open(0).read().split())
+```
+
+``open(0)`` collects everything from the standard input. Its the same as reading a normal file in python. ``map`` is used here to instantly convert these inputs to integers.
+
 
 ### collection of unsorted stuff
 
@@ -26,17 +62,6 @@ I=input
 a=I()
 b=I()
 I(a+b)
-```
-<hr />
-
-```py
-a=int(input())
-b=int(input())
-c=int(input())
-```
-can be written as
-```py
-a,b,c=map(int,open(0).read().split())
 ```
 <hr />
 
