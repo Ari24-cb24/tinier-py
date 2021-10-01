@@ -36,7 +36,7 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
     + [Assigning variables to a to list converted iterator](#assigning-variables-to-a-to-list-converted-iterator)
     + [Getting the last/first element of a list](#getting-the-last-first-element-of-a-list)
     + [Popping the last/first element of a list](#popping-the-last-first-element-of-a-list)
-  * [Don't use the list method everywhere](#don-t-use-the-list-method-everywhere)
+    + [Don't use the list method everywhere](#don-t-use-the-list-method-everywhere)
   * [For-loops](#for-loops)
     + [Combining two for-loops into one](#combining-two-for-loops-into-one)
   * [Shorthand for range(3)](#shorthand-for-range-3-)
@@ -465,7 +465,7 @@ _,*L=L
 
 what we do here is unpacking the list ``L`` to the variables ``_`` and ``L``. The underscore stands for a non-used variable.
 
-## Don't use the list method everywhere
+### Don't use the list method everywhere
 
 When having the following code
 
