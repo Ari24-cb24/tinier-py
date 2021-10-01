@@ -39,7 +39,7 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
     + [Don't use the list method everywhere](#don-t-use-the-list-method-everywhere)
   * [For-loops](#for-loops)
     + [Combining two for-loops into one](#combining-two-for-loops-into-one)
-  * [Shorthand for range(3)](#shorthand-for-range-3-)
+    + [Shorthand for range(3)](#shorthand-for-range-3-)
     + [Shortcut for any range when the current iteration count is not important](#shortcut-for-any-range-when-the-current-iteration-count-is-not-important)
     + [Replacing For-Loops entirely with ``eval``](#replacing-for-loops-entirely-with---eval--)
   * [Regex](#regex)
