@@ -499,7 +499,7 @@ for xy in range(a*b):
 	y = xy%a
 ```
 
-## Shorthand for range(3)
+### Shorthand for range(3)
 
 ```py
 # Longhand
