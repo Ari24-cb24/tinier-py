@@ -7,6 +7,43 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
 
 # Table Of Contents
 
+- [tinier-py](#tinier-py)
+- [Table Of Contents](#table-of-contents)
+  * [What is Python/Code Golfing](#what-is-python-code-golfing)
+  * [Why and when should minified code be used?](#why-and-when-should-minified-code-be-used-)
+  * [General tricks](#general-tricks)
+    + [Use of spaces around mathematical operators, strings and parantheses](#use-of-spaces-around-mathematical-operators--strings-and-parantheses)
+    + [Indentations](#indentations)
+  * [Reading inputs](#reading-inputs)
+    + [Shorthand for reading inputs from stdin](#shorthand-for-reading-inputs-from-stdin)
+    + [Reading inputs by defining a variable with the input function](#reading-inputs-by-defining-a-variable-with-the-input-function)
+  * [Mathematics](#mathematics)
+    + [Check for prime](#check-for-prime)
+    + [Swapping out ``==`` with ``<``](#swapping-out--------with------)
+    + [Shorthand for ``math.sqrt``](#shorthand-for---mathsqrt--)
+    + [Flooring and Ceiling a float divided by another float](#flooring-and-ceiling-a-float-divided-by-another-float)
+    + [Checking if float is an integer or a decimal](#checking-if-float-is-an-integer-or-a-decimal)
+  * [Printing](#printing)
+    + [Printing a string depending on a boolean](#printing-a-string-depending-on-a-boolean)
+    + [Shorthand for using input instead of print](#shorthand-for-using-input-instead-of-print)
+    + [Printing two integers with a space between them](#printing-two-integers-with-a-space-between-them)
+    + [Printing decimal numbers without a zero if it's an integer](#printing-decimal-numbers-without-a-zero-if-it-s-an-integer)
+    + [Shorthand for using ``join`` in a print statement](#shorthand-for-using---join---in-a-print-statement)
+    + [Starred expressions in print functions](#starred-expressions-in-print-functions)
+  * [Lists and Iterators/Generators](#lists-and-iterators-generators)
+    + [Comparing two successive elements in a list](#comparing-two-successive-elements-in-a-list)
+    + [Shortcut for using the ``list`` function on iterators like ``map``](#shortcut-for-using-the---list---function-on-iterators-like---map--)
+    + [Assigning variables to a to list converted iterator](#assigning-variables-to-a-to-list-converted-iterator)
+    + [Getting the last/first element of a list](#getting-the-last-first-element-of-a-list)
+    + [Popping the last/first element of a list](#popping-the-last-first-element-of-a-list)
+  * [Don't use the list method everywhere](#don-t-use-the-list-method-everywhere)
+  * [For-loops](#for-loops)
+    + [Combining two for-loops into one](#combining-two-for-loops-into-one)
+  * [Shorthand for range(3)](#shorthand-for-range-3-)
+    + [Shortcut for any range when the current iteration count is not important](#shortcut-for-any-range-when-the-current-iteration-count-is-not-important)
+    + [Replacing For-Loops entirely with ``eval``](#replacing-for-loops-entirely-with---eval--)
+  * [Regex](#regex)
+
 ## What is Python/Code Golfing
 
 ## Why and when should minified code be used?
