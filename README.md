@@ -9,8 +9,9 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
 
 - [tinier-py](#tinier-py)
 - [Table Of Contents](#table-of-contents)
-  * [What is Python/Code Golfing](#what-is-python-code-golfing)
-  * [Why and when should minified code be used?](#why-and-when-should-minified-code-be-used-)
+  * [What is Python Code Golfing](#what-is-python-code-golfing)
+  * [Why and when should minified code be used](#why-and-when-should-minified-code-be-used)
+  * [Code golfing platforms](#code-golfing-platforms)
   * [General tricks](#general-tricks)
     + [Use of spaces around mathematical operators, strings and parantheses](#use-of-spaces-around-mathematical-operators--strings-and-parantheses)
     + [Indentations](#indentations)
@@ -44,13 +45,23 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
     + [Replacing For-Loops entirely with ``eval``](#replacing-for-loops-entirely-with---eval--)
   * [Regex](#regex)
 
-## What is Python/Code Golfing
+## What is Python Golfing
 
-## Why and when should minified code be used?
+Python golfing is the challenge to write as little as possible amount of python code in order to achieve the goal or complete the quest. By playing Code golf you'll learn to reduce, reuse and recycle your python code. It's important that your code does not have to be readable. Your sole goal is to complete the challenge given.
+
+## Why and when should minified code be used
 
 > The purpose of code golfing is to test one’s abilities, during challenges. That said, you should not use techniques like this in your normal code, as it compromises readability. Ideally, you should only use these tricks during a challenge.  
 
 <i> ~ tinier.js.org </i>
+
+## Code golfing platforms
+
+Here are some platforms to play code golfing:
+
+- [codingame.com](https://codingame.com/)
+  * [Try clash of code with shortest mode](https://codingame.com/clashofcode)
+- [Github golfbot](https://github.com/noops-challenge/golfbot)
 
 ## General tricks
 
@@ -234,9 +245,8 @@ tho we can make use of some simple math to shorten this:
 # Shorthand
 a = float(input())
 print(a//3))
+print(-(-a//3))
 ```
-
-> TODO: find shortcut for ceil, I remembered something like ``print(-(a//3))`` but I can't remember anymore lol
 
 ### Checking if float is an integer or a decimal
 
@@ -543,6 +553,205 @@ exec('print(1);'*n)
 
 # collection of unsorted stuff
 
+```py
+# Longhand
+for i in range(2):
+	for j in range(3):
+		for k in range(4):
+			print(i,j,k)
+
+# Shorthand
+for k in range(2*3*4):
+	print(k//3//4, k%(3*4), k%4)
+```
+
+```py
+# Longhand
+i-=1
+i+=1
+
+# Shorthand (Bit flipping)
+~-i
+-~i
+```
+
+```py
+S = {1, 2, 3, 4, 5, 6}
+
+# Longhand (set)
+print(5 in S)
+
+# Shorthand
+print({5}&S)
+```
+
+```py
+# Longhand
+print(a and b)
+
+# Shorthand
+print(a&b)
+
+# Shorthand number 2
+print(a*b)
+```
+
+```py
+# Longhand
+print(a or b)
+
+# Shorthand
+print(a|b)
+```
+
+```py
+A = [...]
+B = 3
+
+# Longhand
+A.append(B)
+
+# Shorthand
+A+=B,
+```
+
+```py
+A = [...]
+B = [...]
+
+# Longhand
+A.extend(B)
+
+# Shorthand
+A+=B
+```
+
+```py
+# Longhand
+if a > 0 and a < 10:
+	print(a)
+
+# Shorthand
+if 0<a<10:
+	print(a)
+```
+
+```py
+# Longhand
+if a > 10 and b > 10 and a < 30 and b < 50:
+	print(a, b)
+
+if 50 > b > 10 < a < 50:
+	print(a, b)
+```
+
+```py
+# Longhand
+def c(a):
+	if a < 3: return a - 5
+	else: return a + 5
+
+# Shorthand
+c=lambda a:a<3and a-5or a+5
+```
+
+```py
+# Longhand
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+# Shorthand
+alphabet = map(chr,range(97,123))
+```
+
+```py
+# Longhand
+if a < b: return a
+else: return b
+
+# Shorthand
+return (b,a)[a<b]
+```
+
+```py
+string = "clashofcode"
+
+# Longhand
+for i in range(len(string)-1,-1,-1):
+    print(string[i])
+
+# Shorthand
+for i in string[::-1]:
+    print(i)
+
+# Even Shorter
+
+print(string[::-1))
+```
+
+```py
+# Longhand
+a = 0
+b = 0
+c = 0
+
+# Shorthand
+a,b,c=0,0,0
+
+# Even Shorter
+a=b=c=0
+
+# And for strings
+a,b,c='pqr'
+
+# And for lists
+a,b,c=[1,'abc',True]
+```
+
+```py
+L = (1,2,3,4,5)
+
+# Longhand
+A = list(L)
+
+# Shorthand
+A=[*L]
+
+# Even Shorter
+*A,=L
+```
+
+```py
+L=[1,2,3,4,5]
+
+# Longhand
+x = set(L)
+
+# Shorthand
+x={*L}
+```
+
+```py
+L=[1,2,3,4,5,6]
+
+# Longhand
+a = tuple(L)
+
+# Shorthand
+a=(*L,)
+```
+
+```py
+T=[*range(10)]
+
+# Longhand
+T = [1] + T + [10]
+
+# Shorthand
+T = [1,*T,10]
+
+# Same with tuples
+T = (1,*T,10)
+```
 
 ```py
 word = input()
@@ -555,7 +764,6 @@ import re
 word=input()
 print(re.sub('[^A-Z]','',word))
 ```
-<hr />
 
 
 ```py
