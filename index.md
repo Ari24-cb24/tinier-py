@@ -689,6 +689,71 @@ print(string[::-1))
 ```
 
 ```py
+# Longhand
+a = 0
+b = 0
+c = 0
+
+# Shorthand
+a,b,c=0,0,0
+
+# Even Shorter
+a=b=c=0
+
+# And for strings
+a,b,c='pqr'
+
+# And for lists
+a,b,c=[1,'abc',True]
+```
+
+```py
+L = (1,2,3,4,5)
+
+# Longhand
+A = list(L)
+
+# Shorthand
+A=[*L]
+
+# Even Shorter
+*A,=L
+```
+
+```py
+L=[1,2,3,4,5]
+
+# Longhand
+x = set(L)
+
+# Shorthand
+x={*L}
+```
+
+```py
+L=[1,2,3,4,5,6]
+
+# Longhand
+a = tuple(L)
+
+# Shorthand
+a=(*L,)
+```
+
+```py
+T=[*range(10)]
+
+# Longhand
+T = [1] + T + [10]
+
+# Shorthand
+T = [1,*T,10]
+
+# Same with tuples
+T = (1,*T,10)
+```
+
+```py
 word = input()
 
 print([c for c in word if c.isupper()])
