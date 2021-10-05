@@ -1,4 +1,4 @@
-# tinier-py
+# [tinier-py](https://ari24-cb24.github.io/tinier-py/)
 A collection of tricks to help you code golfing with Python or to confuse your code reviewers.
 
 I use these python tricks all the time when clashing in shortest mode on codingame or playing code golf. These are very useful. If you want to add another snippet, create a pull request. Also, it would be very nice to help sorting that unsorted stuff or just correcting english grammar (mine is not so good, I'm not a native speaker).
