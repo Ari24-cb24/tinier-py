@@ -20,7 +20,7 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
     + [Reading inputs by defining a variable with the input function](#reading-inputs-by-defining-a-variable-with-the-input-function)
   * [Mathematics](#mathematics)
     + [Check for prime](#check-for-prime)
-    + [Swapping out ``==`` with ``<``](#swapping-out-with)
+    + [Swapping out ``==`` with ``<``](#swapping-out--with-)
     + [Shorthand for ``math.sqrt``](#shorthand-for-mathsqrt)
     + [Flooring and Ceiling a float divided by another float](#flooring-and-ceiling-a-float-divided-by-another-float)
     + [Checking if float is an integer or a decimal](#checking-if-float-is-an-integer-or-a-decimal)
@@ -40,9 +40,10 @@ Also, it's highly inspired by https://tinier.js.org/. I did not find any type of
     + [Don't use the list method everywhere](#don-t-use-the-list-method-everywhere)
   * [For-loops](#for-loops)
     + [Combining two for-loops into one](#combining-two-for-loops-into-one)
+    + [Shorten multiple for loops into one](#shorten-multiple-for-loops-into-one)
     + [Shorthand for range(3)](#shorthand-for-range-3-)
     + [Shortcut for any range when the current iteration count is not important](#shortcut-for-any-range-when-the-current-iteration-count-is-not-important)
-    + [Replacing For-Loops entirely with ``eval``](#replacing-for-loops-entirely-with-eval)
+    + [Replacing For-Loops entirely with ``exec``](#replacing-for-loops-entirely-with-exec)
   * [Regex](#regex)
 
 ## What is Python Golfing
@@ -334,7 +335,7 @@ These things can take up a lot of characters of code when you don't know a short
 
 my_float = str(...)
 
-print(my_float.split(".")[0] if my_floats.endswith(".0") else my_float)
+print(my_float.split(".")[0] if my_float.endswith(".0") else my_float)
 
 ```
 
@@ -426,7 +427,7 @@ A = list(range(3))
 but again, there are these wonderful starred expressions:
 
 ```py
-*A=range(3)
+A=[*range(3)]
 ```
 
 ### Getting the last/first element of a list
@@ -509,6 +510,22 @@ for xy in range(a*b):
 	y = xy%a
 ```
 
+### Shorten multiple for loops into one
+
+It's possible to shorten multiple for loops into one using simple mathematics
+
+```py
+# Longhand
+for i in range(2):
+	for j in range(3):
+		for k in range(4):
+			print(i,j,k)
+
+# Shorthand
+for k in range(2*3*4):
+	print(k//3//4, k%(3*4), k%4)
+```
+
 ### Shorthand for range(3)
 
 ```py
@@ -534,7 +551,7 @@ for _ in[1]*10:
 ```
 <hr />
 
-### Replacing For-Loops entirely with ``eval``
+### Replacing For-Loops entirely with ``exec``
 
 You can replace a for loop with a range when the current iteration count does not matter with the use of the ``eval`` function.
 
@@ -552,18 +569,6 @@ exec('print(1);'*n)
 
 
 # collection of unsorted stuff
-
-```py
-# Longhand
-for i in range(2):
-	for j in range(3):
-		for k in range(4):
-			print(i,j,k)
-
-# Shorthand
-for k in range(2*3*4):
-	print(k//3//4, k%(3*4), k%4)
-```
 
 ```py
 # Longhand
